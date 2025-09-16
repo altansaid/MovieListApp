@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- MainScene.xml - Main scene layout for MovieListApp -->
+<!-- This defines the visual structure and component hierarchy -->
+
+<component name="MainScene" extends="Scene">
+    <script type="text/brightscript" uri="pkg:/components/MainScene.brs" />
+    
+    <!-- Background for the entire scene -->
+    <children>
+        <Rectangle
+            id="background"
+            width="1920"
+            height="1080"
+            color="0x1a1a1a"
+        />
+        
+        <!-- Title bar at the top -->
+        <Rectangle
+            id="titleBar"
+            width="1920"
+            height="120"
+            color="0x333333"
+        >
+            <Label
+                id="titleLabel"
+                text="MovieListApp"
+                font="font:LargeBoldSystemFont"
+                color="0xFFFFFF"
+                width="1920"
+                height="120"
+                horizAlign="center"
+                vertAlign="center"
+            />
+        </Rectangle>
+        
+        <!-- Main content area where different views will be displayed -->
+        <Group id="contentGroup">
+            <!-- Movie list component will be added here dynamically -->
+        </Group>
+    </children>
+    
+    <!-- Interface definitions for component communication -->
+    <interface>
+        <field id="currentView" type="string" value="movieList" />
+        <field id="selectedMovieId" type="integer" value="-1" />
+    </interface>
+</component>

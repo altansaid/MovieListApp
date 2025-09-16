@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- MovieListItem.xml - Individual movie list item component -->
+<!-- Displays a single movie with poster, title, and hover effects -->
+
+<component name="MovieListItem" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/MovieListItem.brs" />
+    
+    <children>
+        <!-- Background card for the movie item -->
+        <Rectangle
+            id="itemBackground"
+            width="300"
+            height="350"
+            color="0x1a1a1a"
+            uri=""
+        />
+        
+        <!-- Movie poster image -->
+        <Poster
+            id="moviePoster"
+            translation="[10, 10]"
+            width="280"
+            height="210"
+            loadDisplayMode="scaleToFit"
+            failedBitmapUri=""
+        />
+        
+        <!-- Movie title -->
+        <Label
+            id="movieTitle"
+            translation="[15, 230]"
+            width="270"
+            height="60"
+            font="font:MediumBoldSystemFont"
+            color="0xFFFFFF"
+            wrap="true"
+            maxLines="2"
+            ellipsisText="..."
+        />
+        
+        <!-- Movie genre and year -->
+        <Label
+            id="movieMeta"
+            translation="[15, 295]"
+            width="270"
+            height="25"
+            font="font:SmallSystemFont"
+            color="0xCCCCCC"
+        />
+        
+        <!-- Hover/focus overlay -->
+        <Rectangle
+            id="focusOverlay"
+            width="300"
+            height="350"
+            color="0x007ACC80"
+            visible="false"
+        />
+        
+        <!-- Selection border -->
+        <Rectangle
+            id="selectionBorder"
+            width="300"
+            height="350"
+            color="0x00000000"
+            lineWidth="3"
+            uri=""
+            visible="false"
+        />
+    </children>
+    
+    <!-- Interface for data binding -->
+    <interface>
+        <field id="itemContent" type="node" onChange="onContentChange" />
+        <field id="focusPercent" type="float" onChange="onFocusPercentChange" />
+    </interface>
+</component>

@@ -1,0 +1,32 @@
+title=MovieListApp
+major_version=1
+minor_version=0
+build_version=0
+
+##Channel Details
+subtitle=Sample Movie List Channel
+mm_icon_focus_hd=pkg:/images/mm_icon_focus_hd.png
+mm_icon_focus_sd=pkg:/images/mm_icon_focus_hd.png
+
+##Screen Resolution Support
+supports_input_launch=1
+
+##Channel Poster Artwork
+poster_icon_focus_hd=pkg:/images/mm_icon_focus_hd.png
+poster_icon_focus_sd=pkg:/images/mm_icon_focus_hd.png
+
+##Splash Screen + Loading Screen Artwork
+splash_screen_hd=pkg:/images/splash_hd.jpg
+splash_screen_fhd=pkg:/images/splash_fhd.jpg
+splash_screen_sd=pkg:/images/splash_hd.jpg
+splash_color=#000000
+splash_min_time=1000
+
+##Resolution
+ui_resolutions=hd,fhd
+
+##Main Entry Point
+main_scene=pkg:/components/MainScene.xml
+
+##SceneGraph Version
+bs_const=bs_const

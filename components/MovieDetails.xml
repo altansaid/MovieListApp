@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- MovieDetails.xml - Movie details component layout -->
+<!-- Shows detailed information about a selected movie with play/back options -->
+
+<component name="MovieDetails" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/MovieDetails.brs" />
+    
+    <children>
+        <!-- Background for the details view -->
+        <Rectangle
+            id="detailsBackground"
+            width="1920"
+            height="960"
+            color="0x0a0a0a"
+        />
+        
+        <!-- Movie poster on the left side -->
+        <Poster
+            id="moviePoster"
+            translation="[80, 60]"
+            width="400"
+            height="600"
+            loadDisplayMode="scaleToFit"
+            failedBitmapUri=""
+        />
+        
+        <!-- Movie information on the right side -->
+        <Group id="movieInfo" translation="[520, 60]">
+            <!-- Movie title -->
+            <Label
+                id="movieTitle"
+                font="font:LargeBoldSystemFont"
+                color="0xFFFFFF"
+                width="1200"
+                height="80"
+                wrap="true"
+            />
+            
+            <!-- Movie metadata (year, genre, duration) -->
+            <Group id="metadata" translation="[0, 90]">
+                <Label
+                    id="movieYear"
+                    font="font:MediumSystemFont"
+                    color="0xCCCCCC"
+                    width="100"
+                    height="40"
+                />
+                <Label
+                    id="movieGenre"
+                    font="font:MediumSystemFont"
+                    color="0xCCCCCC"
+                    translation="[120, 0]"
+                    width="200"
+                    height="40"
+                />
+                <Label
+                    id="movieDuration"
+                    font="font:MediumSystemFont"
+                    color="0xCCCCCC"
+                    translation="[340, 0]"
+                    width="150"
+                    height="40"
+                />
+            </Group>
+            
+            <!-- Movie description -->
+            <Label
+                id="movieDescription"
+                font="font:MediumSystemFont"
+                color="0xEEEEEE"
+                translation="[0, 150]"
+                width="1200"
+                height="300"
+                wrap="true"
+            />
+            
+            <!-- Action buttons -->
+            <Group id="actionButtons" translation="[0, 480]">
+                <!-- Play button -->
+                <Rectangle
+                    id="playButton"
+                    width="150"
+                    height="60"
+                    color="0x007ACC"
+                    uri=""
+                >
+                    <Label
+                        text="▶ Play"
+                        font="font:MediumBoldSystemFont"
+                        color="0xFFFFFF"
+                        width="150"
+                        height="60"
+                        horizAlign="center"
+                        vertAlign="center"
+                    />
+                </Rectangle>
+                
+                <!-- Back button -->
+                <Rectangle
+                    id="backButton"
+                    translation="[180, 0]"
+                    width="150"
+                    height="60"
+                    color="0x666666"
+                    uri=""
+                >
+                    <Label
+                        text="← Back"
+                        font="font:MediumBoldSystemFont"
+                        color="0xFFFFFF"
+                        width="150"
+                        height="60"
+                        horizAlign="center"
+                        vertAlign="center"
+                    />
+                </Rectangle>
+            </Group>
+        </Group>
+        
+        <!-- Focus indicator for buttons -->
+        <Rectangle
+            id="buttonFocus"
+            width="150"
+            height="60"
+            color="0x00000000"
+            lineWidth="3"
+            uri=""
+            visible="false"
+        >
+            <!-- Focus border -->
+            <Rectangle
+                width="150"
+                height="60"
+                color="0x00000000"
+                lineWidth="3"
+                uri=""
+            />
+        </Rectangle>
+        
+        <!-- Instructions -->
+        <Label
+            id="instructions"
+            text="Use ← → to select, OK to choose, Back to return"
+            font="font:SmallSystemFont"
+            color="0xAAAAAA"
+            translation="[80, 700]"
+            width="1200"
+            height="30"
+        />
+    </children>
+    
+    <!-- Interface for data and events -->
+    <interface>
+        <field id="movieData" type="assocarray" />
+        <field id="action" type="string" value="" />
+        <field id="focusedButton" type="integer" value="0" />
+    </interface>
+</component>

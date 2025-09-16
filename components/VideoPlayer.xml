@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- VideoPlayer.xml - Video player component layout -->
+<!-- Simple video player with basic controls and back navigation -->
+
+<component name="VideoPlayer" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/VideoPlayer.brs" />
+    
+    <children>
+        <!-- Background for video player -->
+        <Rectangle
+            id="playerBackground"
+            width="1920"
+            height="960"
+            color="0x000000"
+        />
+        
+        <!-- Video content node for playback -->
+        <Video
+            id="videoPlayer"
+            translation="[0, 0]"
+            width="1920"
+            height="960"
+            visible="true"
+            autoplay="true"
+        />
+        
+        <!-- Control overlay (appears on key press) -->
+        <Group id="controlsOverlay" visible="false">
+            <!-- Semi-transparent background for controls -->
+            <Rectangle
+                id="controlsBackground"
+                width="1920"
+                height="200"
+                translation="[0, 760]"
+                color="0x00000080"
+            />
+            
+            <!-- Movie title display -->
+            <Label
+                id="videoTitle"
+                translation="[60, 780]"
+                width="1200"
+                height="50"
+                font="font:LargeBoldSystemFont"
+                color="0xFFFFFF"
+            />
+            
+            <!-- Playback controls -->
+            <Group id="playbackControls" translation="[60, 840]">
+                <!-- Play/Pause button -->
+                <Rectangle
+                    id="playPauseButton"
+                    width="120"
+                    height="50"
+                    color="0x007ACC"
+                >
+                    <Label
+                        id="playPauseLabel"
+                        text="⏸ Pause"
+                        font="font:MediumBoldSystemFont"
+                        color="0xFFFFFF"
+                        width="120"
+                        height="50"
+                        horizAlign="center"
+                        vertAlign="center"
+                    />
+                </Rectangle>
+                
+                <!-- Back to details button -->
+                <Rectangle
+                    id="backButton"
+                    translation="[140, 0]"
+                    width="120"
+                    height="50"
+                    color="0x666666"
+                >
+                    <Label
+                        text="← Back"
+                        font="font:MediumBoldSystemFont"
+                        color="0xFFFFFF"
+                        width="120"
+                        height="50"
+                        horizAlign="center"
+                        vertAlign="center"
+                    />
+                </Rectangle>
+            </Group>
+            
+            <!-- Progress bar area -->
+            <Group id="progressArea" translation="[60, 910]">
+                <!-- Progress bar background -->
+                <Rectangle
+                    id="progressBackground"
+                    width="1800"
+                    height="10"
+                    color="0x333333"
+                />
+                
+                <!-- Progress bar fill -->
+                <Rectangle
+                    id="progressFill"
+                    width="0"
+                    height="10"
+                    color="0x007ACC"
+                />
+                
+                <!-- Time displays -->
+                <Label
+                    id="currentTime"
+                    translation="[0, 20]"
+                    width="100"
+                    height="30"
+                    font="font:SmallSystemFont"
+                    color="0xFFFFFF"
+                    text="00:00"
+                />
+                
+                <Label
+                    id="totalTime"
+                    translation="[1700, 20]"
+                    width="100"
+                    height="30"
+                    font="font:SmallSystemFont"
+                    color="0xFFFFFF"
+                    text="00:00"
+                    horizAlign="right"
+                />
+            </Group>
+        </Group>
+        
+        <!-- Instructions overlay (appears briefly at start) -->
+        <Group id="instructionsOverlay" visible="true">
+            <Rectangle
+                width="600"
+                height="100"
+                translation="[660, 490]"
+                color="0x00000080"
+            />
+            <Label
+                text="Press any key for controls, Back to return"
+                font="font:MediumSystemFont"
+                color="0xFFFFFF"
+                translation="[680, 520]"
+                width="560"
+                height="40"
+                horizAlign="center"
+            />
+        </Group>
+        
+        <!-- Focus indicator for control buttons -->
+        <Rectangle
+            id="controlFocus"
+            width="120"
+            height="50"
+            color="0x00000000"
+            lineWidth="2"
+            uri=""
+            visible="false"
+        />
+    </children>
+    
+    <!-- Interface for data and events -->
+    <interface>
+        <field id="movieData" type="assocarray" />
+        <field id="action" type="string" value="" />
+        <field id="focusedControl" type="integer" value="0" />
+        <field id="controlsVisible" type="boolean" value="false" />
+    </interface>
+</component>

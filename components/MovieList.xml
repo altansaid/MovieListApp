@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- MovieList.xml - Movie list component layout -->
+<!-- Displays a scrollable list of movies with posters and titles -->
+
+<component name="MovieList" extends="Group">
+    <script type="text/brightscript" uri="pkg:/components/MovieList.brs" />
+    
+    <children>
+        <!-- Background for the movie list area -->
+        <Rectangle
+            id="listBackground"
+            width="1920"
+            height="960"
+            color="0x0a0a0a"
+        />
+        
+        <!-- Title for the movie list section -->
+        <Label
+            id="sectionTitle"
+            text="Featured Movies"
+            font="font:MediumBoldSystemFont"
+            color="0xFFFFFF"
+            translation="[60, 40]"
+            width="800"
+            height="50"
+        />
+        
+        <!-- Instructions for user navigation -->
+        <Label
+            id="instructions"
+            text="Use ↑↓ to navigate, OK to select"
+            font="font:SmallSystemFont"
+            color="0xAAAAAA"
+            translation="[60, 85]"
+            width="800"
+            height="30"
+        />
+        
+        <!-- Main list component for displaying movies -->
+        <RowList
+            id="movieRowList"
+            translation="[60, 130]"
+            width="1800"
+            height="780"
+            itemComponentName="MovieListItem"
+            numRows="1"
+            rowHeights="[350]"
+            rowItemSize="[[300, 350]]"
+            rowItemSpacing="[[30, 0]]"
+            showRowLabel="[false]"
+            rowFocusAnimationStyle="fixed"
+            vertFocusAnimationStyle="fixed"
+        />
+        
+        <!-- Focus indicator rectangle -->
+        <Rectangle
+            id="focusRectangle"
+            width="310"
+            height="360"
+            color="0x00000000"
+            translation="[55, 125]"
+            visible="false"
+        >
+            <Rectangle
+                width="310"
+                height="360"
+                color="0x00000000"
+                lineWidth="4"
+                uri="pkg:/images/focus_ring.png"
+            />
+        </Rectangle>
+    </children>
+    
+    <!-- Interface for data binding and events -->
+    <interface>
+        <field id="content" type="node" />
+        <field id="selectedItem" type="node" />
+        <field id="itemFocused" type="node" />
+    </interface>
+</component>

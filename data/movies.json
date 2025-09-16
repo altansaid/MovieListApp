@@ -1,0 +1,44 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "Sample Adventure Movie",
+      "description": "Join our hero on an epic adventure across mysterious lands filled with danger and wonder. This thrilling tale will keep you on the edge of your seat from start to finish.",
+      "posterUrl": "https://via.placeholder.com/300x450/4A90E2/FFFFFF?text=Adventure+Movie",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "genre": "Adventure",
+      "year": 2023,
+      "duration": "1h 45m"
+    },
+    {
+      "id": 2,
+      "title": "Comedy Central",
+      "description": "A hilarious comedy that will make you laugh until your sides hurt. Follow the misadventures of unlikely friends in this feel-good movie that's perfect for the whole family.",
+      "posterUrl": "https://via.placeholder.com/300x450/F39C12/FFFFFF?text=Comedy+Central",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+      "genre": "Comedy",
+      "year": 2023,
+      "duration": "1h 32m"
+    },
+    {
+      "id": 3,
+      "title": "Sci-Fi Thriller",
+      "description": "In a dystopian future, humanity's last hope lies in the hands of a unlikely group of rebels. Experience cutting-edge special effects and mind-bending plot twists.",
+      "posterUrl": "https://via.placeholder.com/300x450/8E44AD/FFFFFF?text=Sci-Fi+Thriller",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+      "genre": "Sci-Fi",
+      "year": 2024,
+      "duration": "2h 18m"
+    },
+    {
+      "id": 4,
+      "title": "Romantic Drama",
+      "description": "A touching love story that spans decades, following two souls destined to be together despite all obstacles. Prepare to be moved by this emotional masterpiece.",
+      "posterUrl": "https://via.placeholder.com/300x450/E74C3C/FFFFFF?text=Romantic+Drama",
+      "videoUrl": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
+      "genre": "Romance",
+      "year": 2023,
+      "duration": "1h 58m"
+    }
+  ]
+}
