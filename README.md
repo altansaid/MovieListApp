@@ -11,6 +11,13 @@ I wanted to understand the basics of how streaming apps on TVs work, so I experi
 - Basic video playback
 - Writing simple BrightScript code
 
+## What I learned
+
+- TV apps follow different UX patterns than web or mobile
+- Focus management is key for remote control navigation
+- SceneGraph’s component approach works well for UI structure
+- BrightScript has its quirks, but it was good practice to try it out
+
 ## Features
 
 - Browse a list of sample movies
@@ -52,9 +59,4 @@ README.md # Project documentation
 - `MovieDetails` → shows movie info with play/back buttons
 - `VideoPlayer` → basic video playback
 
-## What I learned
 
-- TV apps follow different UX patterns than web or mobile
-- Focus management is key for remote control navigation
-- SceneGraph’s component approach works well for UI structure
-- BrightScript has its quirks, but it was good practice to try it out
